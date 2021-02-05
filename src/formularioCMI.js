@@ -19,6 +19,7 @@ class formularioCMI extends React.Component {
             validadeDocumentoConjugue: '',
             NIFCliente: '',
             NIFConjugue: '',
+            tipoCliente: '',
             tipoFracao: '',
             destinadoA: '',
             divisoes: '',
@@ -119,6 +120,13 @@ class formularioCMI extends React.Component {
                     }
                     <label>NIF Cliente</label>
                     <input type='text' name='NIFCliente' value={this.state.NIFCliente} onChange={event => this.handleChange(event)} />
+                    <select name='tipoCliente' onChange={event => this.handleChange(event)}>
+                        <option selected='selected'>Selecione o tipo de licença</option>
+                        <option name='tipoCliente' value='proprietário'>Proprietário(s)</option>
+                        <option name='tipoCliente' value='senhorio'>Senhorio(s)</option>
+                        <option name='tipoCliente' value='trespassante'>Trespassante(s)</option>
+                        <option name='tipoCliente' value='outro'>Outro(s)</option>
+                    </select>
                     <label>Tipo de fração</label>
                     <input type='text' name='tipoFracao' value={this.state.tipoFracao} onChange={event => this.handleChange(event)} />
                     <label>Destinada a:</label>
@@ -283,6 +291,7 @@ class formularioCMI extends React.Component {
                     validadeDocumentoConjugue={this.state.validadeDocumentoConjugue}
                     NIFCliente={this.state.NIFCliente}
                     NIFConjugue={this.state.NIFConjugue}
+                    tipoCliente={this.state.tipoCliente}
                     tipoFracao={this.state.tipoFracao}
                     destinadoA={this.state.destinadoA}
                     divisoes={this.state.divisoes}
@@ -327,7 +336,6 @@ class formularioCMI extends React.Component {
                     NIFAngariador={this.state.NIFAngariador}
                     clausulaLitigio={this.state.clausulaLitigio}
                     dataContrato={this.state.dataContrato}
-
                 />
             </div>
         )
