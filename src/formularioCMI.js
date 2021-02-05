@@ -1,5 +1,7 @@
 import React from 'react'
 import FormularioCMI_pdf from './formularioCMI_pdf'
+import { Page, Text, View, Document, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
+import Button from './button'
 
 class formularioCMI extends React.Component {
     constructor(props) {
@@ -337,6 +339,7 @@ class formularioCMI extends React.Component {
                     clausulaLitigio={this.state.clausulaLitigio}
                     dataContrato={this.state.dataContrato}
                 />
+                <Button />
             </div>
         )
     }
